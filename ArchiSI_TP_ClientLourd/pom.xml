@@ -2,18 +2,14 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>ArchiSI_TP</artifactId>
+        <groupId>edu.polytech</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>edu.polytech</groupId>
-    <artifactId>ArchiSI_TP</artifactId>
-    <packaging>pom</packaging>
-    <version>1.0-SNAPSHOT</version>
-    <modules>
-        <module>${project.artifactId}_EJB</module>
-        <module>${project.artifactId}_Web</module>
-        <module>ArchiSI_TP_EAR</module>
-        <module>ArchiSI_TP_ClientLourd</module>
-    </modules>
+    <artifactId>${project.parent.artifactId}_ClientLourd</artifactId>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
@@ -22,10 +18,10 @@
 
     <dependencies>
         <dependency>
-            <groupId>javax</groupId>
-            <artifactId>javaee-api</artifactId>
-            <version>7.0</version>
-            <scope>provided</scope>
+            <groupId>edu.polytech</groupId>
+            <artifactId>ArchiSI_TP_EJB</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
 
