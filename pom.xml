@@ -11,8 +11,8 @@
     <modules>
         <module>${project.artifactId}_EJB</module>
         <module>${project.artifactId}_Web</module>
-        <module>ArchiSI_TP_EAR</module>
-        <module>ArchiSI_TP_ClientLourd</module>
+        <module>${project.artifactId}_EAR</module>
+        <module>${project.artifactId}_ClientLourd</module>
     </modules>
 
     <properties>
