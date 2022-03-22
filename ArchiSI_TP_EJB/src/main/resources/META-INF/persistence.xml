@@ -5,6 +5,7 @@
              version="2.2">
     <persistence-unit name="GestionEJB" transaction-type="JTA"> <!-- name="GestionEJB" -->
         <jta-data-source>java:/MySqlGestionJPA</jta-data-source> <!-- JNDI : replace the link using a created datasource on the server -->
+        <!-- list of model classes-->
         <class>edu.polytech.model</class>
         <properties>
             <property
