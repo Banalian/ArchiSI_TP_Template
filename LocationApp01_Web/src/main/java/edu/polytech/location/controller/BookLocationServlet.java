@@ -31,7 +31,7 @@ public class BookLocationServlet extends HttpServlet {
         String dateDebutS = request.getParameter("dateDebut");
         Date dateDebut = null;
         try {
-            dateDebut = new SimpleDateFormat("dd/MM/yyyy").parse(dateDebutS);
+            dateDebut = new SimpleDateFormat("yyyy/MM/dd").parse(dateDebutS);
         } catch (ParseException e) {
             e.printStackTrace();
         }
@@ -39,13 +39,18 @@ public class BookLocationServlet extends HttpServlet {
         String dateFinS = request.getParameter("dateDebut");
         Date dateFin = null;
         try {
-            dateFin = new SimpleDateFormat("dd/MM/yyyy").parse(dateFinS);
+            dateFin = new SimpleDateFormat("yyyy/MM/dd").parse(dateFinS);
         } catch (ParseException e) {
             e.printStackTrace();
         }
+        int dureeEnJour = 0;
 
-        int dureeEnJour = (int) TimeUnit.DAYS.convert(dateFin.getTime()-dateDebut.getTime(),TimeUnit.MILLISECONDS);
-
+        try {
+            dureeEnJour = (int) TimeUnit.DAYS.convert(dateFin.getTime() - dateDebut.getTime(), TimeUnit.MILLISECONDS);
+        }
+        catch(NullPointerException e){
+            e.printStackTrace();
+        }
         LocationBean locationBean = business.getLocation(Integer.valueOf(request.getParameter("id")));
 
         reservation.setAppart(locationBean);
@@ -54,6 +59,7 @@ public class BookLocationServlet extends HttpServlet {
         reservation.setDureeEnJours(dureeEnJour);
 
         request.setAttribute("RESERVATION",reservation);
+
         request.getRequestDispatcher("bookLocation.jsp").forward(request,response);
     }
 
