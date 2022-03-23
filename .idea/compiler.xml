@@ -6,10 +6,10 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="ArchiSI_TP_Web" />
-        <module name="ArchiSI_TP_EJB" />
-        <module name="ArchiSI_TP_EAR" />
-        <module name="ArchiSI_TP_ClientLourd" />
+        <module name="LocationApp01_ClientLourd" />
+        <module name="LocationApp01_EJB" />
+        <module name="LocationApp01_Web" />
+        <module name="LocationApp01_EAR" />
       </profile>
     </annotationProcessing>
   </component>

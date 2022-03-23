@@ -2,14 +2,15 @@
 <project version="4">
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="FrameworkDetectionExcludesConfiguration">
-    <file type="ejb" url="file://$PROJECT_DIR$/ArchiSI_TP_EJB" />
-    <file type="javaeeApplication" url="file://$PROJECT_DIR$/ArchiSI_TP_EAR" />
-    <file type="web" url="file://$PROJECT_DIR$/ArchiSI_TP_Web" />
+    <file type="ejb" url="file://$PROJECT_DIR$/LocationApp01_EJB" />
+    <file type="javaeeApplication" url="file://$PROJECT_DIR$/LocationApp01_EAR" />
+    <file type="web" url="file://$PROJECT_DIR$/LocationApp01_Web" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/LocationApp01_ClientLourd/pom.xml" />
       </list>
     </option>
   </component>
