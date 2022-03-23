@@ -68,8 +68,8 @@ public class LocationClient {
         jndiProperties.put(Context.PROVIDER_URL, "remote+http://localhost:8080");
         Context ctx = new InitialContext(jndiProperties);
 
-        String appName = "LocationApp/";
-        String projectName = "LocationAppEJB/";
+        String appName = "LocationApp01_EAR-1.0-SNAPSHOT";
+        String projectName = "LocationApp01_Web-1.0-SNAPSHOT";
         String className = BusinessImpl.class.getSimpleName();
         String remote = BusinessRemote.class.getName();
 

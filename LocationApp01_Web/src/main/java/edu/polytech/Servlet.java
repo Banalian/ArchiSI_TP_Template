@@ -12,8 +12,8 @@ import java.io.IOException;
 @WebServlet(name = "index", value = "/index")
 public class Servlet extends HttpServlet {
 
-    @EJB
-    private Object object;//will be the business object
+    //@EJB
+    //put the business object here
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {

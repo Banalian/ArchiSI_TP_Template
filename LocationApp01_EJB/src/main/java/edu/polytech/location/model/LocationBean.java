@@ -13,8 +13,7 @@ import javax.persistence.Lob;
  * Entity implementation class for Entity: LocationBean
  *
  */
-@Entity
-
+@Entity(name = "locationbean")
 public class LocationBean implements Serializable {
 
     @Id
