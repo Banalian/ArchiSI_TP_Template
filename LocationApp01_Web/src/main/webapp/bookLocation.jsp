@@ -49,7 +49,23 @@
     </fieldset>
     <form action="confirmationServlet" method="post">
         <input type="hidden" name="id" value="${requestScope.RESERVATION.id}">
-        <input type="hidden" name="finalPrice" value=${requestScope.RESERVATION.prixTot}>
+        <input type="hidden" name="idAppart" value="${requestScope.RESERVATION.appart.id}">
+
+        <input type="hidden" name="dateDebut" value="${requestScope.RESERVATION.dateDebut}">
+        <input type="hidden" name="dateFin" value="${requestScope.RESERVATION.dateFin}">
+
+        <input type="hidden" name="dureeEnJours" value="${requestScope.RESERVATION.dureeEnJours}">
+
+        <input type="hidden" name="prixLocation" value="${requestScope.RESERVATION.prixLocation}">
+        <input type="hidden" name="prixMenage" value="${requestScope.RESERVATION.prixMenage}">
+        <input type="hidden" name="prixAssurance" value="${requestScope.RESERVATION.prixAssurance}">
+
+        <input type="hidden" name="reducSejourLong" value="${requestScope.RESERVATION.reducSejourLong}">
+        <input type="hidden" name="reducSup500" value="${requestScope.RESERVATION.reducSup500}">
+        <input type="hidden" name="reducSejourLointain" value="${requestScope.RESERVATION.reducSejourLointain}">
+        <input type="hidden" name="reducFidelite" value="${requestScope.RESERVATION.reducFidelite}">
+
+        <input type="hidden" name="prixTot" value=${requestScope.RESERVATION.prixTot}>
         <input type="submit" value="Valider la réservation">
     </form>
 
