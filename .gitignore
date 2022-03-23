@@ -5,4 +5,4 @@
 /LocationApp01_ClientLourd/target/
 /.idea/
 
-!/.idea/libraries/
+!/.idea/libraries/*
