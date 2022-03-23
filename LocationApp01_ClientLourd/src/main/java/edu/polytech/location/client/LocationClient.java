@@ -52,6 +52,7 @@ public class LocationClient {
         bean.setNightPrice(nightPrice);
 
         File file = new File(picture);
+        System.out.println("File : " + file.getAbsolutePath());
         byte[] picInBytes = new byte[(int) file.length()];
         FileInputStream fileInputStream = new FileInputStream(file);
         fileInputStream.read(picInBytes);
@@ -69,11 +70,11 @@ public class LocationClient {
         Context ctx = new InitialContext(jndiProperties);
 
         String appName = "LocationApp01_EAR-1.0-SNAPSHOT";
-        String projectName = "LocationApp01_Web-1.0-SNAPSHOT";
+        String projectName = "LocationApp01_EJB-1.0-SNAPSHOT";
         String className = BusinessImpl.class.getSimpleName();
         String remote = BusinessRemote.class.getName();
 
-        String url = "ejb:" + appName + projectName + className + "!" + remote;
+        String url = "ejb:" + appName + "/" + projectName + "/" + className + "!" + remote;
         System.out.println("EJB appelé avec : " + url);
 
         BusinessRemote business = (BusinessRemote) ctx.lookup(url);

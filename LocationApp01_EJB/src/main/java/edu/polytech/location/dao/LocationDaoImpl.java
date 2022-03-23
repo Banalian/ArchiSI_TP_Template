@@ -21,7 +21,7 @@ public class LocationDaoImpl implements LocationDao{
 
     @Override
     public List<LocationBean> getLocations() {
-        Query request = em.createQuery("select l from LocationBean l");
+        Query request = em.createQuery("select l from locationbean l");
         return  request.getResultList();
     }
 
