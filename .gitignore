@@ -1,3 +1,6 @@
 # Project exclude paths
-/ArchiSI_TP_EAR/target/
+/LocationApp01_EAR/target/
+/LocationApp01_EJB/target/
+/LocationApp01_Web/target/
+/LocationApp01_ClientLourd/target/
 /.idea/
