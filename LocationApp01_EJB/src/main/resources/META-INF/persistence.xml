@@ -3,8 +3,9 @@
     <persistence-unit name="LocationEJB">
         <jta-data-source>java:/LocationDB</jta-data-source>
         <class>edu.polytech.location.model.LocationBean</class>
+        <class>edu.polytech.location.model.ReservationBean</class>
         <properties>
-            <property name="javax.persistence.schema-generation.database.action" value="none"/>
+            <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
         </properties>
     </persistence-unit>
 </persistence>
