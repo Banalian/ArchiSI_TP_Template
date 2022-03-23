@@ -1,11 +1,15 @@
 package edu.polytech.location.model;
 
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 
 public class ReservationBean implements Serializable{
+
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
 
     private LocationBean appart;
 
@@ -14,13 +18,33 @@ public class ReservationBean implements Serializable{
 
     @Temporal(TemporalType.TIMESTAMP)
     private Date dateFin;
+
+    private int dureeEnJours;
+
     private float prixMenage;
     private float prixAssurance;
     private float reducSejourLong;
     private float reducSejoutLointain;
     private float reducSup500;
+    private float reducFidelite;
     private float prixLocation;
-    private float PrixTot;
+    private float prixTot;
+
+    public int getDureeEnJours() {
+        return dureeEnJours;
+    }
+
+    public void setDureeEnJours(int dureeEnJours) {
+        this.dureeEnJours = dureeEnJours;
+    }
+
+    public float getReducFidelite() {
+        return reducFidelite;
+    }
+
+    public void setReducFidelite(float reducFidelite) {
+        this.reducFidelite = reducFidelite;
+    }
 
     public LocationBean getAppart() {
         return appart;
@@ -99,11 +123,11 @@ public class ReservationBean implements Serializable{
     }
 
     public float getPrixTot() {
-        return PrixTot;
+        return prixTot;
     }
 
-    public void setPrixTot(float prixTot) {
-        PrixTot = prixTot;
+    public void setPrixTot(float newPrixTot) {
+        prixTot = newPrixTot;
     }
 
 }
