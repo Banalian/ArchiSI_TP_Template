@@ -3,10 +3,10 @@
              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd"
              version="2.2">
-    <persistence-unit name="GestionEJB" transaction-type="JTA"> <!-- name="GestionEJB" -->
-        <jta-data-source>java:/MySqlGestionJPA</jta-data-source> <!-- JNDI : replace the link using a created datasource on the server -->
+    <persistence-unit name="LocationEJB" transaction-type="JTA">
+        <jta-data-source>java:/LocationDB</jta-data-source> <!-- JNDI : replace the link using a created datasource on the server -->
         <!-- list of model classes-->
-        <class>edu.polytech.model</class>
+        <class>edu.polytech.location.model.LocationBean</class>
         <properties>
             <property
                     name="javax.persistence.schema-generation.database.action"
