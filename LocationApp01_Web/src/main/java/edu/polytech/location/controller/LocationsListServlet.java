@@ -16,7 +16,7 @@ import edu.polytech.location.model.LocationBean;
 /**
  * Servlet implementation class LocationsListServlet
  */
-@WebServlet("/locationsList")
+@WebServlet(name="LocationsListServlet",value="/LocationsListServlet")
 public class LocationsListServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 

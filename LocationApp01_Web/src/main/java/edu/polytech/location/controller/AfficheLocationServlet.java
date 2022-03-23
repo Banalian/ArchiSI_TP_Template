@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/afficheLocation")
+@WebServlet("/afficheLocationServlet")
 public class AfficheLocationServlet extends HttpServlet {
 
     @EJB
@@ -24,6 +24,6 @@ public class AfficheLocationServlet extends HttpServlet {
 
         request.setAttribute("LOCATION", locationBean);
 
-        request.getRequestDispatcher("afficherLocation.jsp").forward(request, response);
+        request.getRequestDispatcher("afficheLocation.jsp").forward(request, response);
     }
 }

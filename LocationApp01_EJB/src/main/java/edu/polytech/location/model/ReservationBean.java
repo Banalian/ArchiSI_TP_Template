@@ -4,8 +4,8 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 
+@Entity
 public class ReservationBean implements Serializable{
-
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
