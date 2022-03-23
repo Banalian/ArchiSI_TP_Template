@@ -9,8 +9,10 @@ public class ReservationBean implements Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Integer idReservation;
 
+    @ManyToOne
+    @JoinColumn(name = "idLocation")
     private LocationBean appart;
 
     @Temporal(TemporalType.TIMESTAMP)
@@ -29,6 +31,14 @@ public class ReservationBean implements Serializable{
     private float reducFidelite;
     private float prixLocation;
     private float prixTot;
+
+    public Integer getIdReservation() {
+        return idReservation;
+    }
+
+    public void setIdReservation(Integer idReservation) {
+        this.idReservation = idReservation;
+    }
 
     public int getDureeEnJours() {
         return dureeEnJours;

@@ -18,7 +18,7 @@ public class LocationBean implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Integer idLocation;
     private Double nightPrice;
     private String address;
     private String city;
@@ -32,11 +32,11 @@ public class LocationBean implements Serializable {
     }
 
     public Integer getId() {
-        return this.id;
+        return this.idLocation;
     }
 
     public void setId(Integer id) {
-        this.id = id;
+        this.idLocation = id;
     }
 
     public Double getNightPrice() {
