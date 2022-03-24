@@ -59,6 +59,8 @@ public class BusinessImpl implements BusinessLocal, BusinessRemote {
     @Override
     public ReservationBean computeReservation(LocationBean location, Date dateDebut, Date dateFin, boolean hasInsurance, boolean hasCleaning){
 
+
+
         int dureeEnJour = 0;
         try {
             dureeEnJour = (int) TimeUnit.DAYS.convert(dateFin.getTime() - dateDebut.getTime(), TimeUnit.MILLISECONDS);
@@ -77,7 +79,7 @@ public class BusinessImpl implements BusinessLocal, BusinessRemote {
         reservation.setPrixLocation((float) (dureeEnJour*reservation.getAppart().getNightPrice()));
 
         //RG1
-        float totalPrice = reservation.getPrixLocation();
+        double totalPrice = reservation.getPrixLocation();
         //RG2
         if (hasCleaning){
             reservation.setPrixMenage(20);
@@ -90,22 +92,27 @@ public class BusinessImpl implements BusinessLocal, BusinessRemote {
         }
         //RG4
         if(reservation.getDureeEnJours()>=7){
-            totalPrice-=reservation.getAppart().getNightPrice();
+            reservation.setReducSejourLong(reservation.getAppart().getNightPrice());
+            totalPrice-=reservation.getReducSejourLong();
         }
         //RG5
         if(totalPrice>500){
+            reservation.setReducSup500(totalPrice*0.1);
             totalPrice*=0.9;
         }
         //RG6
         int dansCbDeJours;
         dansCbDeJours = (int) TimeUnit.DAYS.convert(reservation.getDateDebut().getTime() - Calendar.getInstance().getTime().getTime(), TimeUnit.MILLISECONDS);
         if(dansCbDeJours>30){
+            reservation.setReducSejourLointain(totalPrice*0.07);
             totalPrice*=0.93;
         }
         //RG7
 
         //RG8
         reservation.setPrixTot(totalPrice);
+
+        reservation.setIdUser(42);
 
         return reservation;
     }

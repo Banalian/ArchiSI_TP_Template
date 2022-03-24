@@ -31,7 +31,7 @@ public class BookLocationServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        ReservationBean reservation = new ReservationBean();
+        ReservationBean reservation;
         Date dateDebut = null;
         Date dateFin = null;
         boolean cleaning = false;
@@ -65,6 +65,9 @@ public class BookLocationServlet extends HttpServlet {
         reservation = business.computeReservation(locationBean, dateDebut,dateFin,insurance, cleaning);
 
         request.setAttribute("RESERVATION",reservation);
+        request.setAttribute("DATEDEBUT",dateDebutS);
+        request.setAttribute("DATEFIN",dateFinS);
+
 
         request.getRequestDispatcher("bookLocation.jsp").forward(request,response);
     }

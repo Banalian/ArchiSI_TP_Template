@@ -71,7 +71,7 @@ public class ConfirmationServlet extends HttpServlet {
 
         request.setAttribute("RESERVATION",reservation);
 
-        request.setAttribute("LOCATION_LIST", business.getLocations());
+        request.setAttribute("LOCATIONS_LIST", business.getLocations());
 
         request.getRequestDispatcher("locationsList.jsp").forward(request,response);
     }

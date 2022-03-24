@@ -24,6 +24,7 @@ public class LocationsListServlet extends HttpServlet {
     @EJB
     private BusinessLocal business;
 
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {

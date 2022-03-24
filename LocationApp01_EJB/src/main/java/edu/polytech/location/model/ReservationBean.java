@@ -25,16 +25,18 @@ public class ReservationBean implements Serializable{
     @Temporal(TemporalType.TIMESTAMP)
     private Date dateFin;
 
+    private int idUser;
+
     private int dureeEnJours;
 
-    private float prixMenage;
-    private float prixAssurance;
-    private float reducSejourLong;
-    private float reducSejourLointain;
-    private float reducSup500;
-    private float reducFidelite;
-    private float prixLocation;
-    private float prixTot;
+    private double prixMenage;
+    private double prixAssurance;
+    private double reducSejourLong;
+    private double reducSejourLointain;
+    private double reducSup500;
+    private double reducFidelite;
+    private double prixLocation;
+    private double prixTot;
 
     public Integer getIdReservation() {
         return idReservation;
@@ -52,11 +54,19 @@ public class ReservationBean implements Serializable{
         this.dureeEnJours = dureeEnJours;
     }
 
-    public float getReducFidelite() {
+    public int getIdUser() {
+        return idUser;
+    }
+
+    public void setIdUser(int idUser) {
+        this.idUser = idUser;
+    }
+
+    public double getReducFidelite() {
         return reducFidelite;
     }
 
-    public void setReducFidelite(float reducFidelite) {
+    public void setReducFidelite(double reducFidelite) {
         this.reducFidelite = reducFidelite;
     }
 
@@ -68,43 +78,43 @@ public class ReservationBean implements Serializable{
         this.appart = appart;
     }
 
-    public float getPrixMenage() {
+    public double getPrixMenage() {
         return prixMenage;
     }
 
-    public void setPrixMenage(float prixMenage) {
+    public void setPrixMenage(double prixMenage) {
         this.prixMenage = prixMenage;
     }
 
-    public float getPrixAssurance() {
+    public double getPrixAssurance() {
         return prixAssurance;
     }
 
-    public void setPrixAssurance(float prixAssurance) {
+    public void setPrixAssurance(double prixAssurance) {
         this.prixAssurance = prixAssurance;
     }
 
-    public float getReducSejourLong() {
+    public double getReducSejourLong() {
         return reducSejourLong;
     }
 
-    public void setReducSejourLong(float reducSejourLong) {
+    public void setReducSejourLong(double reducSejourLong) {
         this.reducSejourLong = reducSejourLong;
     }
 
-    public float getReducSejourLointain() {
+    public double getReducSejourLointain() {
         return reducSejourLointain;
     }
 
-    public void setReducSejourLointain(float reducSejoutLointain) {
+    public void setReducSejourLointain(double reducSejoutLointain) {
         this.reducSejourLointain = reducSejoutLointain;
     }
 
-    public float getReducSup500() {
+    public double getReducSup500() {
         return reducSup500;
     }
 
-    public void setReducSup500(float reducSup500) {
+    public void setReducSup500(double reducSup500) {
         this.reducSup500 = reducSup500;
     }
 
@@ -128,19 +138,19 @@ public class ReservationBean implements Serializable{
         this.dateFin = dateFin;
     }
 
-    public float getPrixLocation() {
+    public double getPrixLocation() {
         return prixLocation;
     }
 
-    public void setPrixLocation(float prix) {
+    public void setPrixLocation(double prix) {
         this.prixLocation = prix;
     }
 
-    public float getPrixTot() {
+    public double getPrixTot() {
         return prixTot;
     }
 
-    public void setPrixTot(float newPrixTot) {
+    public void setPrixTot(double newPrixTot) {
         prixTot = newPrixTot;
     }
 

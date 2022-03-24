@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 <head>
@@ -48,11 +48,10 @@
         </table>
     </fieldset>
     <form action="confirmationServlet" method="post">
-        <input type="hidden" name="id" value="${requestScope.RESERVATION.idReservation}">
         <input type="hidden" name="idAppart" value="${requestScope.RESERVATION.appart.idLocation}">
 
-        <input type="hidden" name="dateDebut" value="${requestScope.RESERVATION.dateDebut}">
-        <input type="hidden" name="dateFin" value="${requestScope.RESERVATION.dateFin}">
+        <input type="hidden" name="dateDebut" value="${requestScope.DATEDEBUT}">
+        <input type="hidden" name="dateFin" value="${requestScope.DATEFIN}">
 
         <input type="hidden" name="dureeEnJours" value="${requestScope.RESERVATION.dureeEnJours}">
 

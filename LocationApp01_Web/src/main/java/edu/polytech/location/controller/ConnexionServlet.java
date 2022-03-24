@@ -19,6 +19,11 @@ public class ConnexionServlet extends HttpServlet {
     private BusinessLocal business;
 
     @Override
+    public void init() throws ServletException {
+        super.init();
+    }
+
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String login = request.getParameter("login");
         if (login.equals("42")) {
