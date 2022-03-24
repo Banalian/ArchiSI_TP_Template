@@ -7,7 +7,7 @@
     <script src="js/location.js"></script>
 </head>
 <body>
- <form action="bookLocation" method="post">
+ <form action="bookLocationServlet" method="post">
      <input type="hidden" name="id" value=${requestScope.LOCATION.id}>
      <fieldset>
          <legend>${requestScope.LOCATION.city} ${requestScope.LOCATION.zipCode}</legend>
