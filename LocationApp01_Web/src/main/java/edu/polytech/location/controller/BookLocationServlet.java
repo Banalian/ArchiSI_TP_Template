@@ -40,7 +40,7 @@ public class BookLocationServlet extends HttpServlet {
         String dateDebutS = request.getParameter("startDate");
 
         try {
-            dateDebut = new SimpleDateFormat("yyyy/MM/dd").parse(dateDebutS);
+            dateDebut = new SimpleDateFormat("yyyy-MM-dd").parse(dateDebutS);
         } catch (ParseException e) {
             e.printStackTrace();
         }
@@ -48,27 +48,12 @@ public class BookLocationServlet extends HttpServlet {
         String dateFinS = request.getParameter("endDate");
 
         try {
-            dateFin = new SimpleDateFormat("yyyy/MM/dd").parse(dateFinS);
+            dateFin = new SimpleDateFormat("yyyy-MM-dd").parse(dateFinS);
         } catch (ParseException e) {
             e.printStackTrace();
         }
-        int dureeEnJour = 0;
 
-        try {
-            dureeEnJour = (int) TimeUnit.DAYS.convert(dateFin.getTime() - dateDebut.getTime(), TimeUnit.MILLISECONDS);
-        }
-        catch(NullPointerException e){
-            e.printStackTrace();
-        }
         LocationBean locationBean = business.getLocation(Integer.valueOf(request.getParameter("id")));
-
-        reservation.setPrixLocation(reservation.getDureeEnJours()*reservation.getPrixLocation());
-        reservation.setAppart(locationBean);
-        reservation.setDateDebut(dateDebut);
-        reservation.setDateFin(dateFin);
-        reservation.setDureeEnJours(dureeEnJour);
-        reservation.setPrixAssurance(reservation.getPrixLocation()*(float)0.05);
-        reservation.setPrixMenage(20);
 
         if(request.getParameter("cancelInsurance")!=null && request.getParameter("cancelInsurance").equals("on")){
             insurance = true;
@@ -77,7 +62,7 @@ public class BookLocationServlet extends HttpServlet {
             cleaning = true;
         }
 
-        business.computePrice(reservation, insurance, cleaning);
+        reservation = business.computeReservation(locationBean, dateDebut,dateFin,insurance, cleaning);
 
         request.setAttribute("RESERVATION",reservation);
 

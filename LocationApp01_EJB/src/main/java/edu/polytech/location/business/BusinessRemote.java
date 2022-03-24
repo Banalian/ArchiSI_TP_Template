@@ -1,5 +1,6 @@
 package edu.polytech.location.business;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.ejb.Remote;
@@ -39,11 +40,12 @@ public interface BusinessRemote {
      * @param hasInsurance boolean to know if the user has the cancel insurance
      * @param hasCleaning boolean to know if the user has the cleaning service
      */
-    void computePrice(ReservationBean reservation, boolean hasInsurance, boolean hasCleaning);
+    ReservationBean computeReservation(LocationBean location, Date dateDebut, Date dateFin, boolean hasInsurance, boolean hasCleaning);
 
     /**
      * Save a reservation in the database.
      * @param reservation the reservation to save
      */
     void insertReservation(ReservationBean reservation);
+
 }

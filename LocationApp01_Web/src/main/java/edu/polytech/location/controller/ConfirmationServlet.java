@@ -33,7 +33,7 @@ public class ConfirmationServlet extends HttpServlet {
         String dateDebutS = request.getParameter("dateDebut");
         Date dateDebut = null;
         try {
-            dateDebut = new SimpleDateFormat("yyyy/MM/dd").parse(dateDebutS);
+            dateDebut = new SimpleDateFormat("yyyy-MM-dd").parse(dateDebutS);
         } catch (ParseException e) {
             e.printStackTrace();
         }
@@ -41,7 +41,7 @@ public class ConfirmationServlet extends HttpServlet {
         String dateFinS = request.getParameter("dateFin");
         Date dateFin = null;
         try {
-            dateFin = new SimpleDateFormat("yyyy/MM/dd").parse(dateFinS);
+            dateFin = new SimpleDateFormat("yyyy-MM-dd").parse(dateFinS);
         } catch (ParseException e) {
             e.printStackTrace();
         }
@@ -65,6 +65,7 @@ public class ConfirmationServlet extends HttpServlet {
         reservation.setReducSejourLong(Float.parseFloat(request.getParameter("reducSejourLong")));
         reservation.setReducSup500(Float.parseFloat(request.getParameter("reducSup500")));
         reservation.setReducSejourLointain(Float.parseFloat(request.getParameter("reducSejourLointain")));
+        reservation.setPrixTot(Float.parseFloat(request.getParameter("prixTot")));
 
         business.insertReservation(reservation);
 
