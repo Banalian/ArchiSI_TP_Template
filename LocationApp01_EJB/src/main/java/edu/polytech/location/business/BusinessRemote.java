@@ -10,12 +10,13 @@ import edu.polytech.location.model.ReservationBean;
 @Remote
 public interface BusinessRemote {
 
-    public void addLocation(LocationBean bean);
+    void addLocation(LocationBean bean);
 
-    public List<LocationBean> getLocations();
+    List<LocationBean> getLocations();
 
-    public LocationBean getLocation(Integer id);
+    LocationBean getLocation(Integer id);
 
-    public void computePrice(ReservationBean reservation);
-    public void insertReservation(ReservationBean reservation);
+    void computePrice(ReservationBean reservation, boolean hasInsurance, boolean hasCleaning);
+
+    void insertReservation(ReservationBean reservation);
 }

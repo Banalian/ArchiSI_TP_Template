@@ -18,7 +18,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
-@WebServlet("/bookLocationServlet")
+@WebServlet(name = "bookLocationServlet", value = "/bookLocationServlet")
 public class BookLocationServlet extends HttpServlet {
 
     @EJB
@@ -27,9 +27,13 @@ public class BookLocationServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         ReservationBean reservation = new ReservationBean();
+        Date dateDebut = null;
+        Date dateFin = null;
+        boolean cleaning = false;
+        boolean insurance = false;
 
         String dateDebutS = request.getParameter("startDate");
-        Date dateDebut = null;
+
         try {
             dateDebut = new SimpleDateFormat("yyyy/MM/dd").parse(dateDebutS);
         } catch (ParseException e) {
@@ -37,7 +41,7 @@ public class BookLocationServlet extends HttpServlet {
         }
 
         String dateFinS = request.getParameter("endDate");
-        Date dateFin = null;
+
         try {
             dateFin = new SimpleDateFormat("yyyy/MM/dd").parse(dateFinS);
         } catch (ParseException e) {
@@ -62,11 +66,13 @@ public class BookLocationServlet extends HttpServlet {
         reservation.setPrixMenage(20);
 
         if(request.getParameter("cancelInsurance")!=null && request.getParameter("cancelInsurance").equals("on")){
-            reservation.setAssurance(true);
+            insurance = true;
         }
         if(request.getParameter("cleaning")!=null && request.getParameter("cleaning").equals("on")) {
-            reservation.setMenage(true);
+            cleaning = true;
         }
+
+        business.computePrice(reservation, insurance, cleaning);
 
         request.setAttribute("RESERVATION",reservation);
 

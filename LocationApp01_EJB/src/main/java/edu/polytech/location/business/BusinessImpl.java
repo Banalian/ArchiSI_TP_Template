@@ -41,15 +41,18 @@ public class BusinessImpl implements BusinessLocal, BusinessRemote {
     }
 
     @Override
-    public void computePrice(ReservationBean reservation){
+    public void computePrice(ReservationBean reservation, boolean hasInsurance, boolean hasCleaning){
         //TODO actually compute prices
         //doing math
         float totalPrice = 0;
 
-        if (reservation.isMenage()){
+        if (hasCleaning){
+            reservation.setPrixMenage(20);
             totalPrice+=reservation.getPrixMenage();
         }
-        if(reservation.isAssurance()){
+        if(hasInsurance){
+            //TODO: compute insurance price
+
             totalPrice+=reservation.getPrixAssurance();
         }
         if(reservation.getDureeEnJours()>=7){
