@@ -36,9 +36,10 @@ public interface BusinessLocal {
 
     /**
      * Compute the price of a reservation and fill all the fields of the bean.
-     * @param reservation the reservation bean to fill and compute
-     * @param hasInsurance boolean to know if the user has the cancel insurance
-     * @param hasCleaning boolean to know if the user has the cleaning service
+     * @param location the location bean representing the reserved apartment
+     * @param hasInsurance boolean to know if reservation includes cancel insurance
+     * @param hasCleaning boolean to know if reservation includes the cleaning service
+     * @return A reservationBean containing the inputted information and with the price reductions computed based on RG1 through 8
      */
     ReservationBean computeReservation(LocationBean location, Date dateDebut, Date dateFin, boolean hasInsurance, boolean hasCleaning);
 

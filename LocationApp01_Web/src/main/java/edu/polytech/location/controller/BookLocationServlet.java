@@ -1,8 +1,6 @@
 package edu.polytech.location.controller;
 
-import edu.polytech.location.business.BusinessImpl;
 import edu.polytech.location.business.BusinessLocal;
-import edu.polytech.location.dao.LocationDao;
 import edu.polytech.location.model.LocationBean;
 import edu.polytech.location.model.ReservationBean;
 
@@ -16,7 +14,6 @@ import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.concurrent.TimeUnit;
 
 /**
  * Servlet implementation class BookLocationServlet

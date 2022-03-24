@@ -45,4 +45,13 @@ public class ReservationDaoImpl implements ReservationDao {
     public ReservationBean getReservation(Integer id) {
         return em.find(ReservationBean.class, id);
     }
+
+
+    @Override
+    public List<ReservationBean> getReservationsOfUser(int id){
+
+        Query request = em.createQuery("select r from ReservationBean as r where r.idUser = 42 order by idReservation");
+        return  request.getResultList();
+
+    }
 }

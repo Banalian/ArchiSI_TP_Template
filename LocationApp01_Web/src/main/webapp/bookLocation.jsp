@@ -64,6 +64,8 @@
         <input type="hidden" name="reducSejourLointain" value="${requestScope.RESERVATION.reducSejourLointain}">
         <input type="hidden" name="reducFidelite" value="${requestScope.RESERVATION.reducFidelite}">
 
+        <input type="hidden" name="idUser" value=${requestScope.RESERVATION.idUser}>
+
         <input type="hidden" name="prixTot" value=${requestScope.RESERVATION.prixTot}>
         <input type="submit" value="Valider la réservation">
     </form>

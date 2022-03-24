@@ -118,9 +118,7 @@ public class ReservationBean implements Serializable{
         this.reducSup500 = reducSup500;
     }
 
-    public ReservationBean() {
-
-    }
+    public ReservationBean() {}
 
     public Date getDateDebut() {
         return dateDebut;

@@ -1,7 +1,5 @@
 package edu.polytech.location.business;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
@@ -14,6 +12,8 @@ import edu.polytech.location.dao.LocationDao;
 import edu.polytech.location.dao.ReservationDao;
 import edu.polytech.location.model.LocationBean;
 import edu.polytech.location.model.ReservationBean;
+
+import static java.lang.Math.max;
 
 /**
  * Implementation of the business interface.
@@ -58,8 +58,6 @@ public class BusinessImpl implements BusinessLocal, BusinessRemote {
      */
     @Override
     public ReservationBean computeReservation(LocationBean location, Date dateDebut, Date dateFin, boolean hasInsurance, boolean hasCleaning){
-
-
 
         int dureeEnJour = 0;
         try {
@@ -108,10 +106,25 @@ public class BusinessImpl implements BusinessLocal, BusinessRemote {
             totalPrice*=0.93;
         }
         //RG7
+        //access DAO and count how many reservations there are with the user id
+        List<ReservationBean> listRes = reservationDao.getReservationsOfUser(42);
+        int count =listRes.size();
+
+        //if we are on our 3rd reservation in a row
+        if( (count+1)%3 == 0 && count != 0){
+            //reduction is a percentage of the prices of these entries
+            double reducFidelite = (listRes.get(listRes.size() - 1).getPrixTot() +
+                                    listRes.get(listRes.size() - 2).getPrixTot()
+                                    )*0.12;
+            reservation.setReducFidelite(reducFidelite);
+            totalPrice-=reducFidelite;
+        }
 
         //RG8
-        reservation.setPrixTot(totalPrice);
+        //avoiding negative total price, it makes no sense
+        reservation.setPrixTot(max(totalPrice,0));
 
+        //in our case, the only existing user is user 42, so we hard code it
         reservation.setIdUser(42);
 
         return reservation;
