@@ -21,6 +21,9 @@ public class ReservationBean implements Serializable{
     @Temporal(TemporalType.TIMESTAMP)
     private Date dateFin;
 
+    private boolean menage;
+    private boolean assurance;
+
     private int dureeEnJours;
 
     private float prixMenage;
@@ -31,6 +34,22 @@ public class ReservationBean implements Serializable{
     private float reducFidelite;
     private float prixLocation;
     private float prixTot;
+
+    public boolean isMenage() {
+        return menage;
+    }
+
+    public void setMenage(boolean cleaning) {
+        this.menage = cleaning;
+    }
+
+    public boolean isAssurance() {
+        return assurance;
+    }
+
+    public void setAssurance(boolean cancelInsurance) {
+        this.assurance = cancelInsurance;
+    }
 
     public Integer getIdReservation() {
         return idReservation;

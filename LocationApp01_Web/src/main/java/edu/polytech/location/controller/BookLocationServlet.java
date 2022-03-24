@@ -53,10 +53,20 @@ public class BookLocationServlet extends HttpServlet {
         }
         LocationBean locationBean = business.getLocation(Integer.valueOf(request.getParameter("id")));
 
+        reservation.setPrixLocation(reservation.getDureeEnJours()*reservation.getPrixLocation());
         reservation.setAppart(locationBean);
         reservation.setDateDebut(dateDebut);
         reservation.setDateFin(dateFin);
         reservation.setDureeEnJours(dureeEnJour);
+        reservation.setPrixAssurance(reservation.getPrixLocation()*(float)0.05);
+        reservation.setPrixMenage(20);
+
+        if(request.getParameter("cancelInsurance")!=null && request.getParameter("cancelInsurance").equals("on")){
+            reservation.setAssurance(true);
+        }
+        if(request.getParameter("cleaning")!=null && request.getParameter("cleaning").equals("on")) {
+            reservation.setMenage(true);
+        }
 
         request.setAttribute("RESERVATION",reservation);
 

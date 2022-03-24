@@ -2,6 +2,7 @@ package edu.polytech.location.business;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -42,6 +43,29 @@ public class BusinessImpl implements BusinessLocal, BusinessRemote {
     @Override
     public void computePrice(ReservationBean reservation){
         //TODO actually compute prices
+        //doing math
+        float totalPrice = 0;
+
+        if (reservation.isMenage()){
+            totalPrice+=reservation.getPrixMenage();
+        }
+        if(reservation.isAssurance()){
+            totalPrice+=reservation.getPrixAssurance();
+        }
+        if(reservation.getDureeEnJours()>=7){
+            totalPrice-=reservation.getAppart().getNightPrice();
+        }
+        if(totalPrice>500){
+            totalPrice*=0.9;
+        }
+        int dansCbDeJours;
+        dansCbDeJours = (int) TimeUnit.DAYS.convert(reservation.getDateDebut().getTime() - Calendar.getInstance().getTime().getTime(), TimeUnit.MILLISECONDS);
+        if(true){
+            //TODO faire la difference avec aujourd'hui
+        }
+
+        reservation.setPrixTot(totalPrice);
+
     }
 
     @Override
