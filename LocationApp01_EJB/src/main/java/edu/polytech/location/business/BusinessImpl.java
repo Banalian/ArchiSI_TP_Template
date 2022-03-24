@@ -58,8 +58,7 @@ public class BusinessImpl implements BusinessLocal, BusinessRemote {
      */
     @Override
     public void computePrice(ReservationBean reservation, boolean hasInsurance, boolean hasCleaning){
-        //TODO actually compute prices
-        //doing math
+
         float totalPrice = 0;
 
         if (hasCleaning){
@@ -67,8 +66,6 @@ public class BusinessImpl implements BusinessLocal, BusinessRemote {
             totalPrice+=reservation.getPrixMenage();
         }
         if(hasInsurance){
-            //TODO: compute insurance price
-
             totalPrice+=reservation.getPrixAssurance();
         }
         if(reservation.getDureeEnJours()>=7){
@@ -79,8 +76,8 @@ public class BusinessImpl implements BusinessLocal, BusinessRemote {
         }
         int dansCbDeJours;
         dansCbDeJours = (int) TimeUnit.DAYS.convert(reservation.getDateDebut().getTime() - Calendar.getInstance().getTime().getTime(), TimeUnit.MILLISECONDS);
-        if(true){
-            //TODO faire la difference avec aujourd'hui
+        if(dansCbDeJours>30){
+            totalPrice*=0.93;
         }
 
         reservation.setPrixTot(totalPrice);
