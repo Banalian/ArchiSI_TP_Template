@@ -5,6 +5,10 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 
+/**
+ * Servlet implementation class AccueilServlet
+ * Home page of the application, redirect to the login page
+ */
 @WebServlet(name = "accueilServlet", value = "/accueilServlet")
 public class AccueilServlet extends HttpServlet {
     @Override

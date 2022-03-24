@@ -11,6 +11,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+/**
+ * Servlet implementation class AfficheLocationServlet
+ * Gets the location chosen by the user and redirects to the view to select dates and some information for the reservation
+ */
 @WebServlet(name = "afficheLocationServlet", value = "/afficheLocationServlet")
 public class AfficheLocationServlet extends HttpServlet {
 

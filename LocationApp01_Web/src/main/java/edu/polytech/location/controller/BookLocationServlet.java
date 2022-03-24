@@ -18,11 +18,16 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * Servlet implementation class BookLocationServlet
+ * Gathers the information of the reservation and send it to the business layer to compute the price, then send it to the view for confirmation by the user
+ */
 @WebServlet(name = "bookLocationServlet", value = "/bookLocationServlet")
 public class BookLocationServlet extends HttpServlet {
 
     @EJB
     private BusinessLocal business;
+
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 

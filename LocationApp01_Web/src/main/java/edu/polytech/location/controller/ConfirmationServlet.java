@@ -14,6 +14,10 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * Servlet implementation class ConfirmationServlet
+ * Insert a reservation in the database and redirect to the location list page
+ */
 @WebServlet(name = "confirmationServlet", value = "/confirmationServlet")
 public class ConfirmationServlet extends HttpServlet {
     @EJB
@@ -65,6 +69,8 @@ public class ConfirmationServlet extends HttpServlet {
         business.insertReservation(reservation);
 
         request.setAttribute("RESERVATION",reservation);
+
+        request.setAttribute("LOCATION_LIST", business.getLocations());
 
         request.getRequestDispatcher("locationsList.jsp").forward(request,response);
     }

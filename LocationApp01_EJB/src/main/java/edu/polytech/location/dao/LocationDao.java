@@ -4,11 +4,28 @@ import java.util.List;
 
 import edu.polytech.location.model.LocationBean;
 
+/**
+ * The Interface LocationDao.
+ * Used to manage the location table in the database.
+ */
 public interface LocationDao {
 
-    public void createLocation(LocationBean bean);
+    /**
+     * Adds the  to the database.
+     * @param bean the location bean to add to the database
+     */
+    void createLocation(LocationBean bean);
 
-    public List<LocationBean> getLocations();
+    /**
+     * Get all the locations in the database.
+     * @return the list of all the locations in the database
+     */
+    List<LocationBean> getLocations();
 
-    public LocationBean getLocation(Integer id);
+    /**
+     * Get the location with the given id.
+     * @param id the id of the location to get
+     * @return the location with the given id
+     */
+    LocationBean getLocation(Integer id);
 }

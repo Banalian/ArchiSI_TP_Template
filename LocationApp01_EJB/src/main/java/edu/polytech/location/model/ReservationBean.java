@@ -4,6 +4,10 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 
+/**
+ * Entity implementation class for Entity: ReservationBean
+ * A Reservation is a reservation of a place, with multiple informations like prices and dates.
+ */
 @Entity
 public class ReservationBean implements Serializable{
 

@@ -11,7 +11,8 @@ import javax.persistence.Lob;
 
 /**
  * Entity implementation class for Entity: LocationBean
- *
+ * A location is a place where a user can stay. Contains multiple explicit informations.
+ * Also contains a picture.
  */
 @Entity(name = "locationbean")
 public class LocationBean implements Serializable {

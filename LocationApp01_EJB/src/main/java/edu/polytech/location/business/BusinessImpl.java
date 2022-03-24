@@ -15,6 +15,10 @@ import edu.polytech.location.dao.ReservationDao;
 import edu.polytech.location.model.LocationBean;
 import edu.polytech.location.model.ReservationBean;
 
+/**
+ * Implementation of the business interface.
+ * Uses javax to handle the model and DAO/database.
+ */
 @Stateless
 public class BusinessImpl implements BusinessLocal, BusinessRemote {
 
@@ -25,21 +29,33 @@ public class BusinessImpl implements BusinessLocal, BusinessRemote {
     private ReservationDao reservationDao;
 
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void addLocation(LocationBean bean) {
         locationDao.createLocation(bean);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public List<LocationBean> getLocations() {
         return locationDao.getLocations();
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public LocationBean getLocation(Integer id) {
         return locationDao.getLocation(id);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void computePrice(ReservationBean reservation, boolean hasInsurance, boolean hasCleaning){
         //TODO actually compute prices
@@ -71,6 +87,9 @@ public class BusinessImpl implements BusinessLocal, BusinessRemote {
 
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void insertReservation(ReservationBean reservation){
         reservationDao.createReservation(reservation);
