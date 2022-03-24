@@ -1,7 +1,8 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
-    <title>Connextion</title>
+    <meta charset="ISO-8859-1">
+    <title>Connection</title>
     <link href="css/style.css" rel="stylesheet">
     <script src="js/location.js"></script>
 </head>
@@ -13,7 +14,11 @@
                 <tbody>
                     <tr>
                         <td>Nom d'utilisateur</td>
-                        <td><input type="text" name="login"></td>
+                        <td>
+                            <label>
+                                <input type="text" name="login">
+                            </label>
+                        </td>
                     </tr>
                 </tbody>
             </table>

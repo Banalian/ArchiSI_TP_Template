@@ -1,7 +1,8 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 <head>
+    <meta charset="ISO-8859-1">
     <title>Réservation d'une location</title>
     <link href="css/style.css" rel="stylesheet">
     <script src="js/location.js"></script>
@@ -15,19 +16,35 @@
              <tbody>
                 <tr>
                     <td>Date de début :</td>
-                    <td><input type="date" name="startDate" required></td>
+                    <td>
+                        <label>
+                            <input type="date" name="startDate" required>
+                        </label>
+                    </td>
                 </tr>
                 <tr>
                     <td>Date de fin: </td>
-                    <td><input type="date" name="endDate" required></td>
+                    <td>
+                        <label>
+                            <input type="date" name="endDate" required>
+                        </label>
+                    </td>
                 </tr>
                 <tr>
                     <td>Forfait ménage :</td>
-                    <td><input type="checkbox" name="cleaning"></td>
+                    <td>
+                        <label>
+                            <input type="checkbox" name="cleaning">
+                        </label>
+                    </td>
                 </tr>
                 <tr>
                     <td>Assurance annulation :</td>
-                    <td><input type="checkbox" name="cancelInsurance"></td>
+                    <td>
+                        <label>
+                            <input type="checkbox" name="cancelInsurance">
+                        </label>
+                    </td>
                 </tr>
              </tbody>
          </table>
