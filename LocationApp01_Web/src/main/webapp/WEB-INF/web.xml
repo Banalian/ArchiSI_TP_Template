@@ -5,6 +5,6 @@
          version="4.0">
 	<display-name>LocationAppWeb</display-name>
 	<welcome-file-list>
-		<welcome-file>LocationsListServlet</welcome-file>
+		<welcome-file>accueilServlet</welcome-file>
 	</welcome-file-list>
 </web-app>
