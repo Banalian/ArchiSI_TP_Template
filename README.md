@@ -9,7 +9,7 @@ This project is a web application that is divided into multiple modules to have 
 
 - LocationApp01_Web is a Web module that is used to contain the website/presentation logic.
 
-## Installation/Configuration/Deployment
+## Installation/Configuration
 
 Before building the project, you need to install the maven dependencies. You will also need a few manual steps to configure the project.
 - for the client:
@@ -21,10 +21,17 @@ Before building the project, you need to install the maven dependencies. You wil
 - for the web module:
     - you need to add the javax.servlet.jstl
 
+
+## Deployment
+
 To deploy the project, you need to build it and the artifacts. You can add the EAR(exploded or not) artifact to the server.
 When using IntelliJ, the configuration might produce a bug which we haven't been able to fix, which produces an error :
 - WFLYEE0042: Failed to construct component instance
 
 A possible step to fix it is to restart the server (and potentially wait a few second before restarting)
+
+When first deploying this project, you will need to set the persistence.xml (in the EJB module) property to "drop-and-create". You can then start the Client Lourd to fill the database.
+
+After this first deployment, you can change the persistence.xml property to "none" or "default" for the next restarts of the server.
 
 ### Using the default configuration, the website is available at http://localhost:8080/LocationApp01_Web/
