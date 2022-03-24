@@ -47,6 +47,8 @@
             </tbody>
         </table>
     </fieldset>
+
+    <!--Hidden parameters to recreate the reservation on the next servlet-->
     <form action="confirmationServlet" method="post">
         <input type="hidden" name="idAppart" value="${requestScope.RESERVATION.appart.idLocation}">
 

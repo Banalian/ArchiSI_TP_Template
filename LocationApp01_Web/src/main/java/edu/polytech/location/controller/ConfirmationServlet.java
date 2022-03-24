@@ -55,6 +55,7 @@ public class ConfirmationServlet extends HttpServlet {
             e.printStackTrace();
         }
 
+        //we recreate the reservation before persisting it
         reservation.setDateDebut(dateDebut);
         reservation.setDateFin(dateFin);
         reservation.setDureeEnJours(dureeEnJour);
@@ -70,6 +71,8 @@ public class ConfirmationServlet extends HttpServlet {
 
         business.insertReservation(reservation);
 
+        // Initial goal was to give the final reservation to the location list page to have a banner showing the confirmation
+        // We didn't managed to implement this but still want to keep this to prepare for the future
         request.setAttribute("RESERVATION",reservation);
 
         request.setAttribute("LOCATIONS_LIST", business.getLocations());

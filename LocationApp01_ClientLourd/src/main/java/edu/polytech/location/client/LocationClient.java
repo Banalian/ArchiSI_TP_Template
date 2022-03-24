@@ -34,13 +34,13 @@ public class LocationClient {
     /**
      * Permet d'insérer un enregistrement en BDD.
      * 
-     * @param address
-     * @param city
-     * @param zipCode
-     * @param nightPrice
-     * @param picture
-     * @throws IOException
-     * @throws NamingException
+     * @param address The address of the location.
+     * @param city The city of the location.
+     * @param zipCode The zip code of the location.
+     * @param nightPrice The price for a night in the location.
+     * @param picture A picture of the location.
+     * @throws IOException If the picture file doesn't exist.
+     * @throws NamingException If the JNDI fails.
      */
     private static LocationBean insertBeanInDB(String address, String city, String zipCode, Double nightPrice,
             String picture) throws IOException, NamingException {
@@ -77,8 +77,6 @@ public class LocationClient {
         String url = "ejb:" + appName + "/" + projectName + "/" + className + "!" + remote;
         System.out.println("EJB appelé avec : " + url);
 
-        BusinessRemote business = (BusinessRemote) ctx.lookup(url);
-
-        return business;
+        return (BusinessRemote) ctx.lookup(url);
     }
 }

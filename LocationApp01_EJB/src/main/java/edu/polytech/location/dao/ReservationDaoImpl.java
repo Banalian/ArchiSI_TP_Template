@@ -47,6 +47,9 @@ public class ReservationDaoImpl implements ReservationDao {
     }
 
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public List<ReservationBean> getReservationsOfUser(int id){
 

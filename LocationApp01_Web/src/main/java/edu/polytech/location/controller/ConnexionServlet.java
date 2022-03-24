@@ -19,16 +19,11 @@ public class ConnexionServlet extends HttpServlet {
     private BusinessLocal business;
 
     @Override
-    public void init() throws ServletException {
-        super.init();
-    }
-
-    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String login = request.getParameter("login");
         if (login.equals("42")) {
             request.setAttribute("LOCATIONS_LIST", business.getLocations());
-            //on imagine que on va garder en plus dans un cookie le login
+            //We could store the login in a cookie to be used in the reservation that the user will do
             request.getRequestDispatcher("locationsList.jsp").forward(request, response);
         } else {
             request.getRequestDispatcher("accueil.jsp").forward(request, response);

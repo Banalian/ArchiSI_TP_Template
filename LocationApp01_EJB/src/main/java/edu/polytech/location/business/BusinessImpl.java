@@ -73,7 +73,6 @@ public class BusinessImpl implements BusinessLocal, BusinessRemote {
         reservation.setDateDebut(dateDebut);
         reservation.setDateFin(dateFin);
         reservation.setDureeEnJours(dureeEnJour);
-        reservation.setPrixMenage(20);
         reservation.setPrixLocation((float) (dureeEnJour*reservation.getAppart().getNightPrice()));
 
         //RG1
