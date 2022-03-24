@@ -26,3 +26,5 @@ When using IntelliJ, the configuration might produce a bug which we haven't been
 - WFLYEE0042: Failed to construct component instance
 
 A possible step to fix it is to restart the server (and potentially wait a few second before restarting)
+
+### Using the default configuration, the website is available at http://localhost:8080/LocationApp01_Web/
