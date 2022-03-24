@@ -35,3 +35,15 @@ When first deploying this project, you will need to set the persistence.xml (in 
 After this first deployment, you can change the persistence.xml property to "none" or "default" for the next restarts of the server.
 
 ### Using the default configuration, the website is available at http://localhost:8080/LocationApp01_Web/
+
+## More information
+
+For the scope and time given for this project, we had to make a few restrictions :
+- We hardcoded the only user who can access the web service (user with login : 42)
+  - only this login will make the servlet redirect to the web page
+  - this login is also hardcoded for all the reservations made using this web service
+
+- The reservation table hold a lot of temporary data (like the reductions or cost of services)
+  - this was a choice made, but we know there were other ways to do it like sending individual parameters
+
+- We tried to have the business handle as many operations as possible, while the servlets tries to just gather data from forms and format them before sending them to the views or the business.
