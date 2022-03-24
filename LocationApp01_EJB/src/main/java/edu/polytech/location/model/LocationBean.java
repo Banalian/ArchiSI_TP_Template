@@ -31,12 +31,12 @@ public class LocationBean implements Serializable {
         super();
     }
 
-    public Integer getId() {
-        return this.idLocation;
+    public Integer getIdLocation() {
+        return idLocation;
     }
 
-    public void setId(Integer id) {
-        this.idLocation = id;
+    public void setIdLocation(Integer idLocation) {
+        this.idLocation = idLocation;
     }
 
     public Double getNightPrice() {

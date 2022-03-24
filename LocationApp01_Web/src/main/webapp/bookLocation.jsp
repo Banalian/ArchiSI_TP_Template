@@ -13,7 +13,7 @@
         <table>
             <tbody>
                 <tr>
-                    <td>Prix du logement( ${requestScope.RESERVATION.dureeEnJour} nuits) :</td>
+                    <td>Prix du logement( ${requestScope.RESERVATION.dureeEnJours} nuits) :</td>
                     <td>${requestScope.RESERVATION.prixLocation}</td>
                 </tr>
                 <tr>
@@ -48,8 +48,8 @@
         </table>
     </fieldset>
     <form action="confirmationServlet" method="post">
-        <input type="hidden" name="id" value="${requestScope.RESERVATION.id}">
-        <input type="hidden" name="idAppart" value="${requestScope.RESERVATION.appart.id}">
+        <input type="hidden" name="id" value="${requestScope.RESERVATION.idReservation}">
+        <input type="hidden" name="idAppart" value="${requestScope.RESERVATION.appart.idLocation}">
 
         <input type="hidden" name="dateDebut" value="${requestScope.RESERVATION.dateDebut}">
         <input type="hidden" name="dateFin" value="${requestScope.RESERVATION.dateFin}">

@@ -60,7 +60,7 @@ public class ConfirmationServlet extends HttpServlet {
         reservation.setReducFidelite(Float.parseFloat(request.getParameter("reducFidelite")));
         reservation.setReducSejourLong(Float.parseFloat(request.getParameter("reducSejourLong")));
         reservation.setReducSup500(Float.parseFloat(request.getParameter("reducSup500")));
-        reservation.setReducSejoutLointain(Float.parseFloat(request.getParameter("reducSejourLointain")));
+        reservation.setReducSejourLointain(Float.parseFloat(request.getParameter("reducSejourLointain")));
 
         business.computePrice(reservation);
 

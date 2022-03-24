@@ -28,7 +28,7 @@ public class BookLocationServlet extends HttpServlet {
 
         ReservationBean reservation = new ReservationBean();
 
-        String dateDebutS = request.getParameter("dateDebut");
+        String dateDebutS = request.getParameter("startDate");
         Date dateDebut = null;
         try {
             dateDebut = new SimpleDateFormat("yyyy/MM/dd").parse(dateDebutS);
@@ -36,7 +36,7 @@ public class BookLocationServlet extends HttpServlet {
             e.printStackTrace();
         }
 
-        String dateFinS = request.getParameter("dateDebut");
+        String dateFinS = request.getParameter("endDate");
         Date dateFin = null;
         try {
             dateFin = new SimpleDateFormat("yyyy/MM/dd").parse(dateFinS);

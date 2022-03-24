@@ -26,7 +26,7 @@ public class ReservationBean implements Serializable{
     private float prixMenage;
     private float prixAssurance;
     private float reducSejourLong;
-    private float reducSejoutLointain;
+    private float reducSejourLointain;
     private float reducSup500;
     private float reducFidelite;
     private float prixLocation;
@@ -88,12 +88,12 @@ public class ReservationBean implements Serializable{
         this.reducSejourLong = reducSejourLong;
     }
 
-    public float getReducSejoutLointain() {
-        return reducSejoutLointain;
+    public float getReducSejourLointain() {
+        return reducSejourLointain;
     }
 
-    public void setReducSejoutLointain(float reducSejoutLointain) {
-        this.reducSejoutLointain = reducSejoutLointain;
+    public void setReducSejourLointain(float reducSejoutLointain) {
+        this.reducSejourLointain = reducSejoutLointain;
     }
 
     public float getReducSup500() {

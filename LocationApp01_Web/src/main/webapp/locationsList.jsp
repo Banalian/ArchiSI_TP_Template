@@ -12,7 +12,7 @@
 <body>
 		<c:forEach var="loc" items="${requestScope.LOCATIONS_LIST}">
 			<form action="afficheLocationServlet" method="get">
-				<input type="hidden" name="id" value="${loc.id}" />
+				<input type="hidden" name="id" value="${loc.idLocation}" />
 				<fieldset class="locationCliquable" onclick="submitForm(this);"
 					onmouseover="mouseOnLocation(this)"
 					onmouseout="mouseOutLocation(this)">

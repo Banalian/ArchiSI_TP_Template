@@ -8,7 +8,7 @@
 </head>
 <body>
  <form action="bookLocationServlet" method="post">
-     <input type="hidden" name="id" value=${requestScope.LOCATION.id}>
+     <input type="hidden" name="id" value=${requestScope.LOCATION.idLocation}>
      <fieldset>
          <legend>${requestScope.LOCATION.city} ${requestScope.LOCATION.zipCode}</legend>
          <table>
