@@ -26,6 +26,7 @@ public class ConfirmationServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+        // We create a reservation bean and fill it with the data from the form
         ReservationBean reservation = new ReservationBean();
         LocationBean appart = business.getLocation(Integer.parseInt(request.getParameter("idAppart")));
         reservation.setAppart(appart);
@@ -72,7 +73,7 @@ public class ConfirmationServlet extends HttpServlet {
         business.insertReservation(reservation);
 
         // Initial goal was to give the final reservation to the location list page to have a banner showing the confirmation
-        // We didn't managed to implement this but still want to keep this to prepare for the future
+        // We didn't manage to implement this but still want to keep this to prepare for the future
         request.setAttribute("RESERVATION",reservation);
 
         request.setAttribute("LOCATIONS_LIST", business.getLocations());

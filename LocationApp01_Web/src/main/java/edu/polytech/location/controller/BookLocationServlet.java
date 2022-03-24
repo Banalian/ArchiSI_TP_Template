@@ -59,9 +59,11 @@ public class BookLocationServlet extends HttpServlet {
             cleaning = true;
         }
 
+        //We compute the price and details of the reservation before sending it to the view to display it and ask for confirmation
         reservation = business.computeReservation(locationBean, dateDebut,dateFin,insurance, cleaning);
 
         request.setAttribute("RESERVATION",reservation);
+        //We send the dates individually for easier parsing in the next servlet
         request.setAttribute("DATEDEBUT",dateDebutS);
         request.setAttribute("DATEFIN",dateFinS);
 

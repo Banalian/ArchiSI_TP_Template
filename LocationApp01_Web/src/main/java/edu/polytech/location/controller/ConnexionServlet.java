@@ -21,6 +21,8 @@ public class ConnexionServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String login = request.getParameter("login");
+        // Hardcoded check to see if the user is the one allowed to connect. If not, redirect to the login page
+        // Would be replaced by a real authentication system in a real application
         if (login.equals("42")) {
             request.setAttribute("LOCATIONS_LIST", business.getLocations());
             //We could store the login in a cookie to be used in the reservation that the user will do
