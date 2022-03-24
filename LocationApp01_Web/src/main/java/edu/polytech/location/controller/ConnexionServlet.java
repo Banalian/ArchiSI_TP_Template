@@ -8,6 +8,10 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 
+/**
+ * Servlet implementation class ConnexionServlet
+ * checks if the user is correct, and redirects to the location list page
+ */
 @WebServlet(name = "connexionServlet", value = "/connexionServlet")
 public class ConnexionServlet extends HttpServlet {
 

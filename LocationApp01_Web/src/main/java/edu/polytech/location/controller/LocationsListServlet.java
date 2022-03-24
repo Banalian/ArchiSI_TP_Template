@@ -15,6 +15,7 @@ import edu.polytech.location.model.LocationBean;
 
 /**
  * Servlet implementation class LocationsListServlet
+ * Will gather all the locations and send them to the view for display
  */
 @WebServlet(name="LocationsListServlet",value="/LocationsListServlet")
 public class LocationsListServlet extends HttpServlet {

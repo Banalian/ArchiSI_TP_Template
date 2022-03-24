@@ -14,7 +14,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
-@WebServlet("/confirmationServlet")
+@WebServlet(name = "confirmationServlet", value = "/confirmationServlet")
 public class ConfirmationServlet extends HttpServlet {
     @EJB
     private BusinessLocal business;
@@ -61,8 +61,6 @@ public class ConfirmationServlet extends HttpServlet {
         reservation.setReducSejourLong(Float.parseFloat(request.getParameter("reducSejourLong")));
         reservation.setReducSup500(Float.parseFloat(request.getParameter("reducSup500")));
         reservation.setReducSejourLointain(Float.parseFloat(request.getParameter("reducSejourLointain")));
-
-        business.computePrice(reservation);
 
         business.insertReservation(reservation);
 
