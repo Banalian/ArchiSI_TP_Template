@@ -46,4 +46,12 @@ public class LocationDaoImpl implements LocationDao{
         return em.find(LocationBean.class,id);
     }
 
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public void deleteLocation(Integer id){
+        em.remove(em.find(LocationBean.class,id));
+    }
+
 }

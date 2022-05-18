@@ -57,6 +57,14 @@ public class BusinessImpl implements BusinessLocal, BusinessRemote {
      * {@inheritDoc}
      */
     @Override
+    public void deleteLocation(Integer id){
+        locationDao.deleteLocation(id);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
     public ReservationBean computeReservation(LocationBean location, Date dateDebut, Date dateFin, boolean hasInsurance, boolean hasCleaning){
 
         int dureeEnJour = 0;

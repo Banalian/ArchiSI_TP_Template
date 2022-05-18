@@ -1,5 +1,7 @@
 package edu.polytech.location.model;
 
+import com.sun.istack.internal.Nullable;
+
 import java.io.Serializable;
 import java.util.Base64;
 
@@ -8,6 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Lob;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  * Entity implementation class for Entity: LocationBean
@@ -24,7 +27,10 @@ public class LocationBean implements Serializable {
     private String address;
     private String city;
     private String zipCode;
+
+    @XmlTransient
     @Lob
+    @Nullable
     private byte[] picture;
     private static final long serialVersionUID = 1L;
 
@@ -72,6 +78,7 @@ public class LocationBean implements Serializable {
         this.zipCode = zipCode;
     }
 
+    @XmlTransient
     public byte[] getPicture() {
         return this.picture;
     }
@@ -81,9 +88,9 @@ public class LocationBean implements Serializable {
     }
 
     /**
-     * Transforme le byte[] contenant les données de l'images en String.
+     * Transforme le byte[] contenant les donnï¿½es de l'images en String.
      * 
-     * @return La chaîne de caractère permettant l'affichage d'une image depuis une
+     * @return La chaï¿½ne de caractï¿½re permettant l'affichage d'une image depuis une
      *         JSP.
      */
     public String getBase64Image() {

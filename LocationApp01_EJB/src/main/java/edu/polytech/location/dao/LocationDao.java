@@ -28,4 +28,12 @@ public interface LocationDao {
      * @return the location with the given id
      */
     LocationBean getLocation(Integer id);
+
+
+    /**
+     * Delete the location with the given id.
+     * @param id the id of the location to delete
+     *            if the id is null, nothing is deleted
+     */
+    void deleteLocation(Integer id);
 }

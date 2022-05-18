@@ -35,6 +35,12 @@ public interface BusinessLocal {
     LocationBean getLocation(Integer id);
 
     /**
+     * Delete a location from the database.
+     * @param id the id of the location to delete
+     */
+    void deleteLocation(Integer id);
+
+    /**
      * Compute the price of a reservation and fill all the fields of the bean.
      * @param location the location bean representing the reserved apartment
      * @param hasInsurance boolean to know if reservation includes cancel insurance
